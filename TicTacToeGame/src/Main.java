@@ -48,11 +48,6 @@ public class Main {
                     } else {
                         turnX = 'X';
                     }
-                    String winner = null;
-                    if (winner.equalsIgnoreCase("draw")) {
-                        System.out.println(
-                                "It's a draw! Thanks for playing.");
-                    }
                     printBoard(board);
 
                 }
