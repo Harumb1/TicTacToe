@@ -8,17 +8,18 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         //Design of the table
+        
         System.out.println("TIC TAC TOE GAME");
         System.out.println("Choose 'X' OR 'O':");
         System.out.println("1.'X'");
         System.out.println("2.'O'");
-        System.out.println("|---|---|---|" +
+        System.out.println("+---+---+---+" +
                 "\n| 1 | 2 | 3 |" +
-                "\n|-----------|" +
+                "\n|---+---+---|" +
                 "\n| 4 | 5 | 6 |" +
-                "\n|-----------|" +
+                "\n|---+---+---|" +
                 "\n| 7 | 8 | 9 |" +
-                "\n|---|---|---|");
+                "\n+---+---+---+");
 
         int choose = Integer.parseInt(sc.nextLine());
         char[] board = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
@@ -87,26 +88,26 @@ public class Main {
 
         }
     }
-
-
+    
     static void printBoard(char board[]) {
-        System.out.println("|---|---|---|");
+        System.out.println("+---+---+---+");
         System.out.println("| " + board[0] + " | "
                 + board[1] + " | " + board[2]
                 + " |");
-        System.out.println("|-----------|");
+        System.out.println("|---+---+---|");
         System.out.println("| " + board[3] + " | "
                 + board[4] + " | " + board[5]
                 + " |");
-        System.out.println("|-----------|");
+        System.out.println("|---+---+---|");
         System.out.println("| " + board[6] + " | "
                 + board[7] + " | " + board[8]
                 + " |");
-        System.out.println("|---|---|---|");
+        System.out.println("+---+---+---+");
 
     }
 
     //All the combinations to determine whether you won or not
+    
     static boolean checkWinner(char[] board) {
         char winner;
         if (board[0] == board[1] && board[1] == board[2] && board[0] != ' ') {
@@ -151,7 +152,17 @@ public class Main {
 
         }
 
-        return false;
+        //Draw funtion
+        //Checks trough every value in char board[] whether there is a space or not
+
+        for(int i = 0; i < 9; i++){
+            char value = board[i];
+            if (value == ' '){
+                return false;
+            }
+        }
+        System.out.println("It's a draw!");
+        return true;
 
     }
 
